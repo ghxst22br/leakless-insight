@@ -115,7 +115,7 @@ export function CheckoutDialog({
               label="Empresa"
               value={form.company}
               onChange={set("company")}
-              error={errors.company}
+              error={errors["company"]}
               placeholder="Razão social"
             />
             <Field
@@ -124,7 +124,7 @@ export function CheckoutDialog({
               type="email"
               value={form.email}
               onChange={set("email")}
-              error={errors.email}
+              error={errors["email"]}
               placeholder="financeiro@empresa.com.br"
             />
             <Field
@@ -132,7 +132,7 @@ export function CheckoutDialog({
               label="CNPJ"
               value={form.cnpj}
               onChange={set("cnpj")}
-              error={errors.cnpj}
+              error={errors["cnpj"]}
               placeholder="00.000.000/0001-00"
             />
             <Button variant="hero" size="lg" onClick={next}>
@@ -148,7 +148,7 @@ export function CheckoutDialog({
               label="Nome no cartão"
               value={form.holder}
               onChange={set("holder")}
-              error={errors.holder}
+              error={errors["holder"]}
               placeholder="Como impresso no cartão"
             />
             <Field
@@ -157,7 +157,7 @@ export function CheckoutDialog({
               inputMode="numeric"
               value={form.card}
               onChange={set("card")}
-              error={errors.card}
+              error={errors["card"]}
               placeholder="0000 0000 0000 0000"
             />
             <div className="grid grid-cols-2 gap-4">
@@ -166,7 +166,7 @@ export function CheckoutDialog({
                 label="Validade"
                 value={form.expiry}
                 onChange={set("expiry")}
-                error={errors.expiry}
+                error={errors["expiry"]}
                 placeholder="MM/AA"
               />
               <Field
@@ -175,7 +175,7 @@ export function CheckoutDialog({
                 inputMode="numeric"
                 value={form.cvv}
                 onChange={set("cvv")}
-                error={errors.cvv}
+                error={errors["cvv"]}
                 placeholder="123"
               />
             </div>
@@ -223,7 +223,7 @@ function Field({
   label,
   error,
   ...props
-}: React.InputHTMLAttributes<HTMLInputElement> & { id: string; label: string; error?: string }) {
+}: React.InputHTMLAttributes<HTMLInputElement> & { id: string; label: string; error?: string | undefined }) {
   return (
     <div className="grid gap-1.5">
       <Label htmlFor={id}>{label}</Label>
