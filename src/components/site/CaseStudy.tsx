@@ -80,7 +80,7 @@ export function CaseStudy() {
                     <XAxis
                       dataKey="label"
                       tick={{ fontSize: 10, fill: "var(--muted-foreground)" }}
-                      tickFormatter={(v: string) => v.split(" ")[0]}
+                      tickFormatter={(v: string) => String(v).split(" ")[0] ?? ""}
                       axisLine={false}
                       tickLine={false}
                     />
